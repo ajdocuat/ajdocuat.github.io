@@ -1,0 +1,612 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>ajBigNumber · AlchemyJ</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# ajBigNumber functions"/><meta name="docsearch:version" content="4.1"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="ajBigNumber · AlchemyJ"/><meta property="og:type" content="website"/><meta property="og:url" content="//"/><meta property="og:description" content="# ajBigNumber functions"/><meta property="og:image" content="/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="/css/atom-one-dark-reasonable.css"/><script src="/js/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="https://www.alchemyj.io" id="siteSubject1" target="_self"><span id="siteSubject2">Alchemy</span><span id="siteSubject3">J</span></a><span id="siteSubject4"> by</span><span> </span><a href="http://www.axisoft.com" rel="noopener noreferrer" data-type="external" data-content="http://www.axisoft.com" id="siteSubject5" target="_blank">Axisoft</a><a href="/versions"><h3>4.1</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"></ul></nav></div></header></div></div><div class="navPusher singleRowMobileNav"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Common Function</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Get Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/4.1/GetStarted/Overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/GetStarted/Prerequisites">Prerequisites</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/GetStarted/Install">Install AlchemyJ</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/GetStarted/RequestAndInstallLicense">Request and Install License</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/GetStarted/WriteYourFirstRESTAPI">Write Your First REST API</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/GetStarted/PreviewYourFirstRESTAPI">Preview Your First REST API</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/GetStarted/GenerateAndRunYourRESTAPI">Generate and Run Your REST API</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/GetStarted/GoingFurther">Going Further</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Terms &amp; Concepts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/4.1/TerminologyAndConcepts/TerminologyAndConcepts">Terms and Concepts</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Recipe Book<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/4.1/RecipeBook/Recipes">Recipes</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Database Operation</h4><ul><li class="navListItem"><a class="navItem" href="/docs/4.1/RecipeBook/DatabaseOperation/AccessingDatabase">Accessing Database</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/RecipeBook/DatabaseOperation/SingleTableMaintenance">Single Table Maintenance</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">File Operation</h4><ul><li class="navListItem"><a class="navItem" href="/docs/4.1/RecipeBook/FileOperation/ReadAndWriteTextFile">Reading and Writing Text Files</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/RecipeBook/FileOperation/ReadAndWriteExcelWorkbook">Reading and Writing Excel Workbook</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/RecipeBook/FileOperation/UploadAndDownloadFileInDB">Uploading and Downloading File in Database</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">External API Integration</h4><ul><li class="navListItem"><a class="navItem" href="/docs/4.1/RecipeBook/ExternalAPIIntegration/InvokingExternalAPI">Making Web Service Requests</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/RecipeBook/ExternalAPIIntegration/CallingExternalJavaFunction">Calling External Java Functions</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Data Validation</h4><ul><li class="navListItem"><a class="navItem" href="/docs/4.1/RecipeBook/DataValidation/DataValidationBackend">Data Validation (Backend)</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/RecipeBook/DataValidation/DataValidationUI">Data Validation (UI)</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Data Handling</h4><ul><li class="navListItem"><a class="navItem" href="/docs/4.1/RecipeBook/DataHandling/ReturningMultipleCells">Returning Multiple Cells</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/RecipeBook/DataHandling/ConstructingJSON">Constructing JSON</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/RecipeBook/DataHandling/ParsingJSON">Parsing JSON</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/RecipeBook/DataHandling/ConstructingXML">Constructing XML</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Access Control</h4><ul><li class="navListItem"><a class="navItem" href="/docs/4.1/RecipeBook/AccessControl/AuthenticationWithLdap">Authentication with LDAP</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/RecipeBook/AccessControl/AuthenticationForRESTAPI">Authentication for REST API</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/4.1/RecipeBook/SendingEmail">Sending Email</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/RecipeBook/ConfigurationExternalization">Reading External Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/RecipeBook/ErrorHandling">Error Handling</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/RecipeBook/WorkingOnMultipleWorkbooks">Team Development using AlchemyJ</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/RecipeBook/PerformanceNOptimization">Improving Performance</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Development<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/Guideline">Guideline</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/AlchemyJStudio">AlchemyJ Studio</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">AlchemyJ Workbook</h4><ul><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/AlchemyJWorkbook/Introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/AlchemyJWorkbook/CreateAlchemyJWorkbook">Create AlchemyJ Workbook</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/AlchemyJWorkbook/AppConfig">Application Configuration Worksheet</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/AlchemyJWorkbook/JavaAPIPackage">Java API Package Worksheet</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/AlchemyJWorkbook/JavaAPIClass">Java API Class Worksheet</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/AlchemyJWorkbook/RESTAPI">REST API Worksheet</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/AlchemyJWorkbook/RESTAPIEndpointGroup">REST API Endpoint Group Worksheet</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/AlchemyJWorkbook/RESTAPILoginService">REST API Login Service Worksheet</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/AlchemyJWorkbook/RESTAPITokenAuthorization">REST API Token Authorization Worksheet</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/AlchemyJWorkbook/RESTAPIUserDetailService">REST API User Details Service Worksheet</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/AlchemyJWorkbook/RESTAPIEndpointSecurity">REST API Endpoint Security Worksheet</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/AlchemyJWorkbook/DBSchema">DB Schema Worksheet</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/AlchemyJWorkbook/DataDictionary">Data Dictionary Worksheet</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/AlchemyJWorkbook/DataRelationshipSchema">Data Relationship Schema</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/AlchemyJWorkbook/FilterCondition">Filter Condition</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/AlchemyJWorkbook/LOBInfo">LOB Info Snippet</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/AlchemyJWorkbook/SortingCriteria">Sorting Criteria</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/AlchemyJWorkbook/SQLParameters">SQL Parameters</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Business Logic</h4><ul><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/BusinessLogic/DefineBusinessLogic">Define Business Logic</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/BusinessLogic/BusinessModelingBestPractice">Business Modeling Best Practice</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Java API</h4><ul><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/JavaAPI/DefineJavaAPIClass">Define Java API Class</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/JavaAPI/DefineJavaAPIPackage">Define Java API Package</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/JavaAPI/IntegrateJavaAPIWithJavaProject">Integrate Java API in a Java project</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">REST API</h4><ul><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/RESTAPI/DefineRESTAPIEndpointGroup">Define REST API Endpoint Group</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/RESTAPI/DefineRESTAPI">Define REST API</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/RESTAPI/EnableRESTSecurity">Enable REST API Security</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/GenerateAPI">Generate API</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">OpenAPI Spec for REST API</h4><ul><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/OpenAPISpecForRESTAPI/Introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/OpenAPISpecForRESTAPI/EnableOpenAPISpec">Enable OpenAPI Specification Generation</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/OpenAPISpecForRESTAPI/OpenAPISpecContentSource">OpenAPI Specification Content Source</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Development/OpenAPISpecForRESTAPI/TryYourRESTAPI">Try Your REST API</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Testing &amp; Troubleshooting<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Testing</h4><ul><li class="navListItem"><a class="navItem" href="/docs/4.1/TestingAndTroubleshooting/Testing/Introduction">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/TestingAndTroubleshooting/Testing/TestTemplate">Test Template</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/TestingAndTroubleshooting/Testing/UsingTestTemplate">Using Test Template</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">API Troubleshooting</h4><ul><li class="navListItem"><a class="navItem" href="/docs/4.1/TestingAndTroubleshooting/APITroubleshooting/APIInspectorSettings">API Inspector Settings</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/TestingAndTroubleshooting/APITroubleshooting/UsingAPIInspector">Using API Inspector</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Reference<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/Index">Index</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Database Operation</h4><ul><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajExecuteSp">ajExecuteSp</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajExecuteSql">ajExecuteSql</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajCreateRec">ajCreateRec</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajCountRec">ajCountRec</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajReadRec">ajReadRec</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajUpdateRec">ajUpdateRec</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajMergeRec">ajMergeRec</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajDeleteRec">ajDeleteRec</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajUploadLob">ajUploadLob</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajDownloadLob">ajDownloadLob</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajGetDBType">ajGetDBType</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">File Operation</h4><ul><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajCheckFileExists">ajCheckFileExists</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajReadFile">ajReadFile</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajRenameFile">ajRenameFile</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajCopyFile">ajCopyFile</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajMoveFile">ajMoveFile</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajWriteFile">ajWriteFile</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajDeleteFile">ajDeleteFile</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajReadWorkbook">ajReadWorkbook</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajWriteWorkbook">ajWriteWorkbook</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">External API Integration</h4><ul><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajCallFunction">ajCallFunction</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajCallWsRest">ajCallWsRest</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajCallWsSoap">ajCallWsSoap</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">JSON &amp; XML Handling</h4><ul><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajFilterJson">ajFilterJson</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajMakeJson">ajMakeJson</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajMakeJsonFromSchema">ajMakeJsonFromSchema</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajMakeJsonFromTable">ajMakeJsonFromTable</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajMakeXML">ajMakeXML</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajMakeXMLFromSchema">ajMakeXMLFromSchema</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajMakeXMLFromTable">ajMakeXMLFromTable</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajPopulateJsonToTable">ajPopulateJsonToTable</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">LDAP Function</h4><ul><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajAuthenLdap">ajAuthenLdap</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajGetLDAPGroupMembers">ajGetLDAPGroupMembers</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajGetLDAPUserDetails">ajGetLDAPUserDetails</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajGetLDAPUserInGroups">ajGetLDAPUserInGroups</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajGetLDAPUserList">ajGetLDAPUserList</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Common Function</h4><ul><li class="navListItem navListItemActive"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajBigNumber">ajBigNumber</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajCheckDataItem">ajCheckDataItem</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajSendEmail">ajSendEmail</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajFilterArray">ajFilterArray</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajSortArray">ajSortArray</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajRegExpCount">ajRegExpCount</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajRegExpMatch">ajRegExpMatch</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajGetAddress">ajGetAddress</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajGetLastUsedCellAddress">ajGetLastUsedCellAddress</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajGetUsedRangeAddress">ajGetUsedRangeAddress</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Error Handling</h4><ul><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajRaiseError">ajRaiseError</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajGetModelError">ajGetModelError</a></li><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/AJExtendedFunctions/ajGetSystemError">ajGetSystemError</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/4.1/Reference/SupportedExcelFunctions">Supported Excel Functions</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">FAQ<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/4.1/Faq/Faq">FAQ</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="ajbignumber-functions"></a><a href="#ajbignumber-functions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumber functions</h1>
+<h2><a class="anchor" aria-hidden="true" id="description"></a><a href="#description" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h2>
+<p>Excel cannot handle numbers more than 15 digits per cell, and so when these numbers are entered, Excel stores the first 15 digits and replaces all remaining digits with zeros. For example; the number 1234567891234567 is stored as 1234567891234560.  AlchemyJ provides a serial of extended functions to handle numbers which are more than 15 digits. These functions are named with prefix <strong>ajBigNum</strong>.</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumabsolutevalue"></a><a href="#ajbignumabsolutevalue" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumAbsoluteValue</h2>
+<p>Returns a BigNumber whose value is  the absolute value, i.e. the magnitude, of the value of this BigNumber.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumAbsoluteValue(number, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: BigNumber</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumcompareto"></a><a href="#ajbignumcompareto" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumCompareTo</h2>
+<p>Compares if BigNumber number1 is greater than number2. Return 1 if number1 is greater than number2. Return -1 if number1 is smaller than number2. Return -0 if number1 is equals to number2.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumCompareTo(number1,number2, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number1 <br/>(required)</td><td>It is to specify the number, string or BigNumber to compare with the number2.</td></tr>
+<tr><td>number2 <br/>(required)</td><td>It is to specify the number, string or BigNumber to compare with the number1.</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: -1/0/1</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumdividedby"></a><a href="#ajbignumdividedby" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumDividedBy</h2>
+<p>Returns a BigNumber whose value is the value of this BigNumber number1 divided by number2.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumDividedBy(number1, number2,[run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number1 <br/>(required)</td><td>It is to specify the number, string or BigNumber for dividend.</td></tr>
+<tr><td>number2<br/>(required)</td><td>It is to specify the number, string or BigNumber for divisor.</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: Big Number</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumdividedtointegerby"></a><a href="#ajbignumdividedtointegerby" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumDividedToIntegerBy</h2>
+<p>Returns a BigNumber whose value is the integer part of dividing the value of this BigNumber number1 by number2.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumDividedToIntegerBy(number1, number2,[run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number1 <br/>(required)</td><td>It is to specify the number, string or BigNumber for dividend.</td></tr>
+<tr><td>number2<br/>(required)</td><td>It is to specify the number, string or BigNumber for divisor.</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: Big Number</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumexponentiatedby"></a><a href="#ajbignumexponentiatedby" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumExponentiatedBy</h2>
+<p>Returns a BigNumber whose value is the value of this BigNumber number1 exponentiated by number2.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumExponentiatedBy(number1, number2, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number1 <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>number2<br/>(required)</td><td>It is to specify the number, and it should be integer.</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: Big Number</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumintegervalue"></a><a href="#ajbignumintegervalue" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumIntegerValue</h2>
+<p>Returns a BigNumber whose value is the value of this BigNumber rounded to an integer using rounding mode round_mode.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumIntegerValue(number,round_mode, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>round_mode <br/>(required)</td><td>It is to specify rounding mode. Here is the supported rounding mode: <br/>ROUND_UP, ROUND_DOWN, ROUND_CEIL, ROUND_FLOOR, ROUND_HALF_UP, ROUND_HALF_DOWN, ROUND_HALF_CEIL, ROUND_HALF_FLOOR</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: BigNumber</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumisequalto"></a><a href="#ajbignumisequalto" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumIsEqualTo</h2>
+<p>Returns true if the value of this BigNumber number1 is equal to the value of number2, otherwise returns false</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumIsEqualTo(number1, number2, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number1 <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>number2 <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: Boolean</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumisfinite"></a><a href="#ajbignumisfinite" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumIsFinite</h2>
+<p>Returns true if the value of this BigNumber is a finite number, otherwise returns false.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumIsFinite(number, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: Boolean</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumisgreaterthan"></a><a href="#ajbignumisgreaterthan" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumIsGreaterThan</h2>
+<p>Returns true if the value of this BigNumber number1 is greater than the value of number2, otherwise returns false.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumIsGreaterThan(number1, number2, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number1 <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>number2 <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: Boolean</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumisgreaterthanorequalto"></a><a href="#ajbignumisgreaterthanorequalto" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumIsGreaterThanOrEqualTo</h2>
+<p>Returns true if the value of this BigNumber number1 is greater than or equal to the value of number2, otherwise returns false.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumIsGreaterThanOrEqualTo(number1, number2, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number1 <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>number2 <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: Boolean</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumisinteger"></a><a href="#ajbignumisinteger" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumIsInteger</h2>
+<p>Returns true if the value of this BigNumber is an integer, otherwise returns false.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumIsInteger(number, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: Boolean</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumislessthan"></a><a href="#ajbignumislessthan" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumIsLessThan</h2>
+<p>Returns true if the value of this BigNumber number1 is less than the value of number2, otherwise returns false.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumIsLessThan(number1, number2, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number1 <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>number2 <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: Boolean</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumislessthanorequalto"></a><a href="#ajbignumislessthanorequalto" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumIsLessThanOrEqualTo</h2>
+<p>Returns true if the value of this BigNumber number1 is less than or equal to the value of number2, otherwise returns false.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumIsLessThanOrEqualTo(number1, number2, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number1 <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>number2 <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: Boolean</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumisnan"></a><a href="#ajbignumisnan" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumIsNAN</h2>
+<p>Returns true if the value of this BigNumber is NaN, otherwise returns false.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumIsNAN(number, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: Boolean</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumisnegative"></a><a href="#ajbignumisnegative" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumIsNegative</h2>
+<p>Returns true if the sign of this BigNumber is negative, otherwise returns false.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumIsNegative(number, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: Boolean</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumispositive"></a><a href="#ajbignumispositive" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumIsPositive</h2>
+<p>Returns true if the sign of this BigNumber is positive, otherwise returns false.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumIsPositive(number, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: Boolean</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumiszero"></a><a href="#ajbignumiszero" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumIsZero</h2>
+<p>Returns true if the value of this BigNumber is zero or minus zero, otherwise returns false.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumIsZero(number, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: Boolean</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignummaximum"></a><a href="#ajbignummaximum" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumMaximum</h2>
+<p>Returns a BigNumber whose value is the maximum of the arguments.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumMaximum(numbers, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>numbers <br/>(required)</td><td>It is to specify an array of number, string or BigNumber, e.g.  12, '13', 14</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: BigNumber</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumminimum"></a><a href="#ajbignumminimum" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumMinimum</h2>
+<p>Returns a BigNumber whose value is the minimum of the arguments.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumMinimum(numbers, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>numbers <br/>(required)</td><td>It is to specify an array of number, string or BigNumber, e.g.  12, '13', 14</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: BigNumber</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumminus"></a><a href="#ajbignumminus" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumMinus</h2>
+<p>Returns a BigNumber whose value is the value of this BigNumber number1 minus number2.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumMinus(number1, number2, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number1 <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>number2 <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: BigNumber</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignummodulo"></a><a href="#ajbignummodulo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumModulo</h2>
+<p>Returns a BigNumber whose value is the value of this BigNumber number1 modulo number2, i.e. the integer remainder of dividing this BigNumber by number2.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumModulo(number1, number2, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number1 <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>number2 <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: BigNumber</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignummultipliedby"></a><a href="#ajbignummultipliedby" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumMultipliedBy</h2>
+<p>Returns a BigNumber whose value is the value of this BigNumber number1 multiplied by number2.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumMultipliedBy(number1, number2, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number1 <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>number2 <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: BigNumber</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumnegated"></a><a href="#ajbignumnegated" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumNegated</h2>
+<p>Returns a BigNumber whose value is the value of this BigNumber negated, i.e. multiplied by -1.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumNegated(number, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: BigNumber</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumplus"></a><a href="#ajbignumplus" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumPlus</h2>
+<p>Returns a BigNumber whose value is the value of this BigNumber number1 plus number2.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumPlus(number1, number2, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number1 <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>number2 <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: BigNumber</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumprecision"></a><a href="#ajbignumprecision" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumPrecision</h2>
+<p>Returns a BigNumber whose value is the value of this BigNumber rounded to a precision defined in trailing_zeros.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumPrecision(number, value, round_mode, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>value <br/>(optional)</td><td>If it is a number, returns a BigNumber whose value is the value of this BigNumber rounded to a precision of significant digits using rounding mode. <br/>If it is omitted or is null, the return value is the number of significant digits of the value of this BigNumber, or null if the value of this BigNumber is ±Infinity or NaN.<br/>If it is true then any trailing zeros of the integer part of a number are counted as significant digits, otherwise they are not.</td></tr>
+<tr><td>round_mode <br/>(optional)</td><td>It is to define the rounding mode. Here is the supported rounding mode:<br/>ROUND_UP, ROUND_DOWN, ROUND_CEIL, ROUND_FLOOR, ROUND_HALF_UP, ROUND_HALF_DOWN, ROUND_HALF_CEIL, ROUND_HALF_FLOOR. <br/><br/> If you do not specify anything, the default value will always be ROUND_UP. <br/><br/></td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: BigNumber</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumrandom"></a><a href="#ajbignumrandom" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumRandom</h2>
+<p>Returns a new BigNumber with a pseudo-random value equal to or greater than 0 and less than 1.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumRandom(decimal_places, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>decimal_places <br/>(required)</td><td>It is an integer. The number is to define how many decimal places will be included for the generated random BigNumber.</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: BigNumber</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumround"></a><a href="#ajbignumround" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumRound</h2>
+<p>Returns the value of this BigNumber after rounded.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumRound(number, decimal_places, round_mode, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>decimal_places <br/>(required)</td><td>It is to specify the no. of decimal places to be rounded.</td></tr>
+<tr><td>round_mode <br/>(optional)</td><td>It is to define the rounding mode. Here is the supported rounding mode: <br/>ROUND_UP, ROUND_DOWN, ROUND_CEIL, ROUND_FLOOR, ROUND_HALF_UP, ROUND_HALF_DOWN, ROUND_HALF_CEIL, ROUND_HALF_FLOOR. <br/><br/> If you do not specify anything, the default value will always be ROUND_UP. <br/><br/></td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: BigNumber</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumshiftedby"></a><a href="#ajbignumshiftedby" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumShiftedBy</h2>
+<p>Returns a BigNumber whose value is the value of this BigNumber number1 shifted by the no. of places defined in number2.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumShiftedBy(number1, number2, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number1 <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>number2 <br/>(required)</td><td>It is a number value which is to define the no. of places to be shifted.</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: BigNumber</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumsquareroot"></a><a href="#ajbignumsquareroot" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumSquareRoot</h2>
+<p>Returns a BigNumber whose value is the square root of the value of this BigNumber.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumSquareRoot(number, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: BigNumber</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumsum"></a><a href="#ajbignumsum" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumSum</h2>
+<p>Returns a BigNumber whose value is the sum of the arguments.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumSum(numbers, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>numbers <br/>(required)</td><td>It is to specify an array of number, string or BigNumber, e.g.  12, '13', 14</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: BigNumber</p>
+<p>2) Method: Within a cell</p>
+<h2><a class="anchor" aria-hidden="true" id="ajbignumtonumber"></a><a href="#ajbignumtonumber" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ajBigNumToNumber</h2>
+<p>Returns the value of this BigNumber as a JavaScript number primitive.</p>
+<p><strong>Syntax</strong></p>
+<p>ajBigNumToNumber(number, [run_condition], [run_by_function_point_only])</p>
+<table>
+<thead>
+<tr><th>Argument Name</th><th><strong>Description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>number <br/>(required)</td><td>It is to specify the number, string or BigNumber.</td></tr>
+<tr><td>run_condition <br/> (optional)</td><td>The function will  run when the value is TRUE. Otherwise will not run. </p>If you do not specify anything, the default  value will always be TRUE.<br/><br/></td></tr>
+<tr><td>run_by_function_point_only  <br/>(optional)</td><td>If it equals FALSE, the function can be executed through ‘Excel Calculation’ (can be either <strong>Automatic</strong> or <strong>Manual</strong>, <strong>Calculate Now</strong> or <strong>Calculate Sheet</strong>) or <strong>Preview Function Point</strong>. </p><p>If it equals TRUE, the function can be executed with <strong>Preview Function Point</strong> (AlchemyJ toolbar \ Preview Function Point) only.</p>If you do not specify anything, the default value will always be TRUE. <br/><br/></td></tr>
+</tbody>
+</table>
+<p>The function will return:</p>
+<p>1) Content type: String</p>
+<p>2) Method: Within a cell</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/4.1/Reference/AJExtendedFunctions/ajGetLDAPUserList"><span class="arrow-prev">← </span><span class="function-name-prevnext">ajGetLDAPUserList</span></a><a class="docs-next button" href="/docs/4.1/Reference/AJExtendedFunctions/ajCheckDataItem"><span class="function-name-prevnext">ajCheckDataItem</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#description">Description</a></li><li><a href="#ajbignumabsolutevalue">ajBigNumAbsoluteValue</a></li><li><a href="#ajbignumcompareto">ajBigNumCompareTo</a></li><li><a href="#ajbignumdividedby">ajBigNumDividedBy</a></li><li><a href="#ajbignumdividedtointegerby">ajBigNumDividedToIntegerBy</a></li><li><a href="#ajbignumexponentiatedby">ajBigNumExponentiatedBy</a></li><li><a href="#ajbignumintegervalue">ajBigNumIntegerValue</a></li><li><a href="#ajbignumisequalto">ajBigNumIsEqualTo</a></li><li><a href="#ajbignumisfinite">ajBigNumIsFinite</a></li><li><a href="#ajbignumisgreaterthan">ajBigNumIsGreaterThan</a></li><li><a href="#ajbignumisgreaterthanorequalto">ajBigNumIsGreaterThanOrEqualTo</a></li><li><a href="#ajbignumisinteger">ajBigNumIsInteger</a></li><li><a href="#ajbignumislessthan">ajBigNumIsLessThan</a></li><li><a href="#ajbignumislessthanorequalto">ajBigNumIsLessThanOrEqualTo</a></li><li><a href="#ajbignumisnan">ajBigNumIsNAN</a></li><li><a href="#ajbignumisnegative">ajBigNumIsNegative</a></li><li><a href="#ajbignumispositive">ajBigNumIsPositive</a></li><li><a href="#ajbignumiszero">ajBigNumIsZero</a></li><li><a href="#ajbignummaximum">ajBigNumMaximum</a></li><li><a href="#ajbignumminimum">ajBigNumMinimum</a></li><li><a href="#ajbignumminus">ajBigNumMinus</a></li><li><a href="#ajbignummodulo">ajBigNumModulo</a></li><li><a href="#ajbignummultipliedby">ajBigNumMultipliedBy</a></li><li><a href="#ajbignumnegated">ajBigNumNegated</a></li><li><a href="#ajbignumplus">ajBigNumPlus</a></li><li><a href="#ajbignumprecision">ajBigNumPrecision</a></li><li><a href="#ajbignumrandom">ajBigNumRandom</a></li><li><a href="#ajbignumround">ajBigNumRound</a></li><li><a href="#ajbignumshiftedby">ajBigNumShiftedBy</a></li><li><a href="#ajbignumsquareroot">ajBigNumSquareRoot</a></li><li><a href="#ajbignumsum">ajBigNumSum</a></li><li><a href="#ajbignumtonumber">ajBigNumToNumber</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap" id="site_map"><table align="center" border="0"><tbody><tr><td align="right" id="copyrightTd"><span height="46px" id="copyright">Copyright © 2019 <a href="http://www.axisoft.com" target="_blank" data-content="http://www.axisoft.com" data-type="external" rel="noopener noreferrer" id="copyrightLink"> Axisoft (Asia Pacific) Limited.</a> All Rights Reserved.</span></td></tr></tbody></table></section></footer></div></body></html>
