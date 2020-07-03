@@ -20,54 +20,41 @@
 </tbody>
 </table>
 <ol start="3">
-<li>Next, we define the function point Create Customer. In the <strong>Function Points</strong> section (for output &amp; declaration of function), key in the values as shown below. For REST API, the output must be an object defined in the <a href="../AlchemyJWorkbook/DataRelationshipSchema">Data Relationship Schema</a>.</li>
-</ol>
+<li><p>Next, we define the function point Create Customer. In the <strong>Function Points</strong> section (for output &amp; declaration of function), key in the values as shown below. For REST API, the output must be an object defined in the <a href="../AlchemyJWorkbook/DataRelationshipSchema">Data Relationship Schema</a>.</p>
 <table>
 <thead>
-<tr><th>Function  Point</th><th>Path</th><th>Operation</th><th>Response Data Address</th><th>Response File Address</th><th>DB Operation Type</th></tr>
+<tr><th>Function  Point</th><th>Path</th><th>Operation</th><th>Response Data Type</th><th>Response Data Address</th><th>Data Source ID</th></tr>
 </thead>
 <tbody>
-<tr><td>Create Customer</td><td>/customer</td><td>POST</td><td>CreateCustomer!B21:L24</td><td></td><td>Transactional</td></tr>
+<tr><td>Create Customer</td><td>/customer</td><td>POST</td><td>Object</td><td>CreateCustomer!B21:M24</td><td>primary</td></tr>
 </tbody>
 </table>
 <p>The <strong>Response Data Address</strong> is the output data relationship schema which is defined in the business logic sheet
-<a href="DefineRESTEndpointGroupImg/image105.png"><img src="DefineRESTEndpointGroupImg/image105.png" alt=""></a></p>
-<ol start="4">
-<li>In the <strong>Input Parameters</strong> section, key in the values as shown below. The input is an object and the <strong>Data Address</strong> is the output data relationship schema which is defined in the business logic sheet.</li>
+<a href="DefineRESTEndpointGroupImg/image105.png"><img src="DefineRESTEndpointGroupImg/image105.png" alt=""></a></p></li>
+<li><p>In the <strong>Input Parameters</strong> section, key in the values as shown below. The input is an object and the <strong>Data Address</strong> is the output data relationship schema which is defined in the business logic sheet.</p></li>
 </ol>
 <table>
 <thead>
 <tr><th>Function  Point</th><th>Style</th><th>Name</th><th>Data Type</th><th>Data Address</th><th>Required</th></tr>
 </thead>
 <tbody>
-<tr><td>Create Customer</td><td>Request body</td><td>customer</td><td>Object</td><td>CreateCustomer!B15:L18</td><td>Yes</td></tr>
+<tr><td>Create Customer</td><td>Request body</td><td>customer</td><td>Object</td><td>CreateCustomer!B15:M18</td><td>Yes</td></tr>
 </tbody>
 </table>
 <p><a href="DefineRESTEndpointGroupImg/image103.png"><img src="DefineRESTEndpointGroupImg/image103.png" alt=""></a></p>
 <ol start="5">
-<li>Our model expects the customer name at GetCustomer!C12. Therefore, in Function Input Parameters section, we define an input parameter called <strong>name</strong> for Function <strong>Point Get Customer</strong>.  <strong>Name</strong> should be a string so its parameter class is String. Set Data Address to GetCustomer!C12 so that when the method is invoked, it will set the input value to GetCustomer!C12 at run-time.</li>
+<li>In the <a href="../AlchemyJWorkbook/JavaAPIClass#related-worksheets">Related Worksheets Section</a>, add the function point name and the related worksheet name.</li>
 </ol>
 <table>
 <thead>
-<tr><th><strong>Function Point</strong></th><th><strong>Name</strong></th><th><strong>Class</strong></th><th><strong>Data Address</strong></th><th>Example Value</th></tr>
+<tr><th>Function  Point</th><th>Worksheet Name</th></tr>
 </thead>
 <tbody>
-<tr><td>Get Customer</td><td>name</td><td>String</td><td>GetCustomer!C12</td><td>CHAN TAI MAN</td></tr>
+<tr><td>Create Customer</td><td>DataDictionary</td></tr>
+<tr><td>Create  Customer</td><td>CreateCustomer</td></tr>
 </tbody>
 </table>
 <ol start="6">
-<li>In <a href="../AlchemyJWorkbook/JavaAPIClass#related-worksheets">Related Worksheets Section</a>, add all the effective ranges used in this API.</li>
-</ol>
-<table>
-<thead>
-<tr><th><strong>Worksheet Effective Range</strong></th></tr>
-</thead>
-<tbody>
-<tr><td>CreateCustomer'!B1:L24</td></tr>
-<tr><td>DataDictionary'!A1:AJ21</td></tr>
-</tbody>
-</table>
-<ol start="7">
 <li>Done! All the settings are shown below.</li>
 </ol>
 <p><a href="DefineRESTEndpointGroupImg/image104.png"><img src="DefineRESTEndpointGroupImg/image104.png" alt=""></a></p>
