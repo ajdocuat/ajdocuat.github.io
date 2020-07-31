@@ -81,7 +81,7 @@
 <tr><td>And / Or<br />(optional)</td><td>If the input is AND, it will need to pass Search Criteria 1 and Search Criteria 2. <br/> If the input is OR, it will pass if it passes either Search Criteria 1 or Search Criteria 2.</td></tr>
 <tr><td>Operator 2<br />(optional)</td><td>The following operators are supported:<br /><ul><li>eq - equal to</li> <li>neq - not equal to</li><li>lt - less than</li><li>lte - less than or equal to</li><li>gt - greater than</li><li>gte - greater than or equal to</li><li>isnull - is null</li><li>isnotnull - is not null</li><li>contains - contains</li><li>doesnotcontain - does not contain</li><li>startswith - starts with</li><li>doesnotstartwith - does not start with</li><li>endswith - ends with</li><li>doesnotendwith - does not end with</li><li>isempty - is empty</li><li>isnotempty- is not empty</li></ul><br /></td></tr>
 <tr><td>Search Criteria<br />(optional)</td><td>This is to state the search criteria value.</td></tr>
-<tr><td>Or Group<br />(optional)</td><td>This is to group the list of data name filter conditions together. <br/>If <strong>Or</strong> is keyed in and there are for example 2 data name row filter condition values, it will check if it passes either of the 2 data name row filter conditions.</td></tr>
+<tr><td>Or Group<br />(optional)</td><td>This is to group the list of data name filter conditions together. <br/>If <strong>Or</strong> is keyed, the filter condictions will be constructed by Or operation.</td></tr>
 </tbody>
 </table>
 <p>Notes: An error will occur if the range value is not in the format of the corresponding filter type. <br />For filter_type = 1, if the operator is available but operand is empty, it will be treated as '' (i.e. empty string).</p>
