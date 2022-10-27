@@ -97,19 +97,45 @@
     apiInitProperties.setStopOnUserRaiseError(<span class="hljs-keyword">true</span>);
     apiInitProperties.setThrowOnFormulaError(<span class="hljs-keyword">true</span>);
     apiInitProperties.setThrowOnUserRaiseError(<span class="hljs-keyword">true</span>);
-    apiInitProperties.setThrowOnInputValueOutOfScope(<span class="hljs-keyword">true</span>);
+    apiInitProperties.setThrowExceptionOnInputArrayOverflow(<span class="hljs-keyword">true</span>);
 
-    <span class="hljs-comment">// Setup property map, these two properties below are mandatory.</span>
+    <span class="hljs-comment">// 1. Setup property map, these two properties below are mandatory.</span>
     <span class="hljs-comment">// You can add your own property, which will be used in workbook, into this map.</span>
     Map&lt;String, String&gt; propMap = createPropertyMap();
-    apiInitProperties.setApplicationPropertiesMap(propMap);
+    apiInitProperties.setApplicationProps(propMap);
 
-    <span class="hljs-comment">// You should setup either of items below, is anyone of them is correct,</span>
+    <span class="hljs-comment">// 2. You should setup either of items below, is anyone of them is correct,</span>
     <span class="hljs-comment">// license file location specification is done.</span>
-    apiInitProperties.setLicenseEvnVariableName(<span class="hljs-string">""</span>);
-    apiInitProperties.setLicenseFileLocation(
-        <span class="hljs-string">"C:\\AlchemyJ\\License\\AlchemyJ.lic"</span>);
-  }
+    apiInitProperties.setLicenseEnvVariableName(<span class="hljs-string">""</span>);
+    apiInitProperties.setLicenseFileLocation(<span class="hljs-string">"C:\\AlchemyJ\\License\\AlchemyJ.lic"</span>);
+
+    <span class="hljs-comment">// 3. Configuration for the debug Excel</span>
+    apiInitProperties.setGenerateDebugExcel(<span class="hljs-keyword">true</span>);
+    apiInitProperties.setDebugExcelLogPath(<span class="hljs-string">"C:\\DebugExcel\\"</span>);
+
+    <span class="hljs-comment">// 4. Configuration for global workbook buffer</span>
+    AlchemyjApiWbBufferProperties bufferProperties = <span class="hljs-keyword">new</span> AlchemyjApiWbBufferProperties();
+    bufferProperties.setOpenApiWorkbookBuffer(<span class="hljs-keyword">true</span>);
+    bufferProperties.setGlobalFpWbCacheInitialSize(<span class="hljs-number">10</span>);
+    bufferProperties.setGlobalFpWbCacheMaxSize(<span class="hljs-number">10</span>); <span class="hljs-comment">// It should be greater than the initialize size</span>
+    bufferProperties.setGlobalFpReuseDynamicRowExtendWbLimitation(<span class="hljs-number">2000</span>);
+
+    <span class="hljs-comment">// 4.1 Configuration for workbook buffer of specified function points</span>
+    AlchemyjApiFpWbBufferProperties fp1WbBufferProperties = <span class="hljs-keyword">new</span> AlchemyjApiFpWbBufferProperties();
+    fp1WbBufferProperties.setFpName(<span class="hljs-string">"Your Function Point Name 1"</span>);
+    fp1WbBufferProperties.setCacheInitialSize(<span class="hljs-number">2</span>);
+    fp1WbBufferProperties.setCacheMaxSize(<span class="hljs-number">6</span>);
+    fp1WbBufferProperties.setReuseDynamicRowExtendWbLimitation(<span class="hljs-number">1000</span>);
+
+    AlchemyjApiFpWbBufferProperties fp2WbBufferProperties = <span class="hljs-keyword">new</span> AlchemyjApiFpWbBufferProperties();
+    fp2WbBufferProperties.setFpName(<span class="hljs-string">"Your Function Point Name 2"</span>);
+    fp2WbBufferProperties.setCacheInitialSize(<span class="hljs-number">1</span>);
+    fp2WbBufferProperties.setCacheMaxSize(<span class="hljs-number">5</span>);
+    fp2WbBufferProperties.setReuseDynamicRowExtendWbLimitation(<span class="hljs-number">2000</span>);
+
+    bufferProperties.setCustomizedFpWbCacheConfigs(Arrays.asList(fp1WbBufferProperties, fp2WbBufferProperties));
+    apiInitProperties.setWbBuffer(bufferProperties);
+}
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="setup-object-mapper"></a><a href="#setup-object-mapper" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Setup Object Mapper</h2>
 <pre><code class="hljs css language-java">  <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setupObjectMapper</span><span class="hljs-params">(AlchemyjApiConfigurer apiConfigurer)</span> </span>{
@@ -178,15 +204,24 @@
     <span class="hljs-comment">// alchemyjExternalResourceRegister.registerLdap(ldapDescriptor1,ldapDescriptor2, ...);</span>
   }
 </code></pre>
-<h2><a class="anchor" aria-hidden="true" id="getting-an-object-instance"></a><a href="#getting-an-object-instance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting an object instance</h2>
-<p>Below is an example of how to get and close an object instance.</p>
-<p>Create an object instance just like creating a normal java object from a java class:</p>
-<pre><code class="hljs css language-java">CustomerObject customer = <span class="hljs-keyword">new</span> CustomerObject();
+<h2><a class="anchor" aria-hidden="true" id="register-kafka-producer"></a><a href="#register-kafka-producer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Register Kafka Producer</h2>
+<pre><code class="hljs css language-java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">registerKafkaProducer</span><span class="hljs-params">(AlchemyjExternalResourceRegister alchemyjExternalResourceRegister)</span> </span>{
+    AlchemyjKafkaProducerDescriptor kafkaProducerDescriptor = <span class="hljs-keyword">new</span> AlchemyjKafkaProducerDescriptor();
+    kafkaProducerDescriptor.setMaxAge(Duration.ofHours(<span class="hljs-number">1</span>));
+    kafkaProducerDescriptor.setPhysicalCloseTimeout(Duration.ofMinutes(<span class="hljs-number">10</span>));
+    kafkaProducerDescriptor.setProducerIdentifier(<span class="hljs-string">"Sample Producer"</span>);
+
+    Map&lt;String, Object&gt; configurationMap = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
+    configurationMap.put(<span class="hljs-string">"key.serializer"</span>, ByteArraySerializer<span class="hljs-class">.<span class="hljs-keyword">class</span>)</span>;
+    kafkaProducerDescriptor.setProducerConfiguration(configurationMap);
+
+    alchemyjExternalResourceRegister.registerKafkaProducer(kafkaProducerDescriptor);
+}
 </code></pre>
-<p>After using the object, it should be closed.</p>
-<pre><code class="hljs css language-java">CustomerObject customer = <span class="hljs-keyword">new</span> CustomerObject();
-....(Your logic code)
-customer.close(); <span class="hljs-comment">//to release the resources</span>
+<h2><a class="anchor" aria-hidden="true" id="getting-an-object-instance"></a><a href="#getting-an-object-instance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting an object instance</h2>
+<p>AlchemyJ generated JAVA code conforms to interface oriented standards. Each JAVA API provides  an interface and corresponding implementation class. For example if you defined an interface &quot;CustomerService&quot; in configuration, you can get an object instance like below:</p>
+<p>Create an object instance just like creating a normal java object from a java class:</p>
+<pre><code class="hljs css language-java">CustomerService customer = <span class="hljs-keyword">new</span> CustomerServiceImpl();
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="methods-of-alchemyjapiinitproperties"></a><a href="#methods-of-alchemyjapiinitproperties" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods of AlchemyjApiInitProperties</h2>
 <ul>
@@ -238,4 +273,4 @@ The Environment Variable Name for your license file.</li>
 <li>public void setExcelDumpFileLocation(String path)
 The file path of Excel dump file.</li>
 </ul>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/4.3/Development/JavaAPI/DefineJavaAPIPackage"><span class="arrow-prev">← </span><span>Define Java API Package</span></a><a class="docs-next button" href="/docs/4.3/Development/RESTAPI/DefineRESTEndpointGroup"><span>Define REST API Endpoint Group</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#initializing-alchemyj-context">Initializing AlchemyJ Context</a></li><li><a href="#setup-property-holder">Setup Property Holder</a></li><li><a href="#setup-object-mapper">Setup Object Mapper</a></li><li><a href="#register-external-resource">Register External Resource</a></li><li><a href="#register-data-source">Register Data Source</a></li><li><a href="#register-smtp-resource">Register SMTP Resource</a></li><li><a href="#register-ldap-resource">Register LDAP Resource</a></li><li><a href="#getting-an-object-instance">Getting an object instance</a></li><li><a href="#methods-of-alchemyjapiinitproperties">Methods of AlchemyjApiInitProperties</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap" id="site_map"><table align="center" border="0"><tbody><tr><td align="right" id="copyrightTd"><span height="46px" id="copyright">Copyright © 2019 <a href="http://www.axisoft.com" target="_blank" data-content="http://www.axisoft.com" data-type="external" rel="noopener noreferrer" id="copyrightLink"> Axisoft.</a> All Rights Reserved.</span></td></tr></tbody></table></section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/4.3/Development/JavaAPI/DefineJavaAPIPackage"><span class="arrow-prev">← </span><span>Define Java API Package</span></a><a class="docs-next button" href="/docs/4.3/Development/RESTAPI/DefineRESTEndpointGroup"><span>Define REST API Endpoint Group</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#initializing-alchemyj-context">Initializing AlchemyJ Context</a></li><li><a href="#setup-property-holder">Setup Property Holder</a></li><li><a href="#setup-object-mapper">Setup Object Mapper</a></li><li><a href="#register-external-resource">Register External Resource</a></li><li><a href="#register-data-source">Register Data Source</a></li><li><a href="#register-smtp-resource">Register SMTP Resource</a></li><li><a href="#register-ldap-resource">Register LDAP Resource</a></li><li><a href="#register-kafka-producer">Register Kafka Producer</a></li><li><a href="#getting-an-object-instance">Getting an object instance</a></li><li><a href="#methods-of-alchemyjapiinitproperties">Methods of AlchemyjApiInitProperties</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap" id="site_map"><table align="center" border="0"><tbody><tr><td align="right" id="copyrightTd"><span height="46px" id="copyright">Copyright © 2019 <a href="http://www.axisoft.com" target="_blank" data-content="http://www.axisoft.com" data-type="external" rel="noopener noreferrer" id="copyrightLink"> Axisoft.</a> All Rights Reserved.</span></td></tr></tbody></table></section></footer></div></body></html>
